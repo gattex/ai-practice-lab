@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 370" width="1600" height="370" font-family="-apple-system, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/>
+    </marker>
+  </defs>
+
+  <rect width="1600" height="370" fill="#ffffff"/>
+
+  <!-- Topic -->
+  <rect x="20" y="60" width="200" height="100" rx="12" fill="#f8d7da" stroke="#c0565b" stroke-width="2"/>
+  <text x="120" y="100" font-size="22" text-anchor="middle" fill="#111">Topic</text>
+  <text x="120" y="128" font-size="15" text-anchor="middle" fill="#111">Should cities invest</text>
+  <text x="120" y="148" font-size="15" text-anchor="middle" fill="#111">in public transport?</text>
+
+  <line x1="220" y1="110" x2="258" y2="110" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- LLM 1: draft -->
+  <rect x="260" y="60" width="120" height="100" rx="12" fill="#e5e7eb" stroke="#111" stroke-width="2"/>
+  <text x="320" y="118" font-size="26" text-anchor="middle" fill="#111">LLM</text>
+  <text x="320" y="192" font-size="17" text-anchor="middle" fill="#111">Write first draft</text>
+
+  <line x1="380" y1="110" x2="408" y2="110" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Essay draft -->
+  <rect x="410" y="75" width="170" height="70" fill="#ffffff" stroke="#111" stroke-width="2"/>
+  <text x="495" y="116" font-size="20" text-anchor="middle" fill="#111">Essay draft</text>
+  <rect x="410" y="210" width="170" height="44" fill="#e5e7eb"/>
+  <text x="495" y="238" font-family="Menlo, Consolas, monospace" font-size="14" text-anchor="middle" fill="#111">Thesis and body</text>
+
+  <line x1="580" y1="110" x2="618" y2="110" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- LLM 2: critique -->
+  <rect x="620" y="60" width="120" height="100" rx="12" fill="#e5e7eb" stroke="#111" stroke-width="2"/>
+  <text x="680" y="118" font-size="26" text-anchor="middle" fill="#111">LLM</text>
+  <text x="680" y="192" font-size="17" text-anchor="middle" fill="#111">Critique the draft</text>
+
+  <line x1="740" y1="110" x2="778" y2="110" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Feedback -->
+  <rect x="780" y="75" width="170" height="70" fill="#ffffff" stroke="#111" stroke-width="2"/>
+  <text x="865" y="116" font-size="20" text-anchor="middle" fill="#111">Feedback</text>
+  <rect x="780" y="210" width="170" height="44" fill="#ecfdf5" stroke="#22c55e" stroke-width="1.5"/>
+  <text x="865" y="238" font-family="Menlo, Consolas, monospace" font-size="14" text-anchor="middle" fill="#111">Weak evidence</text>
+
+  <line x1="950" y1="110" x2="978" y2="110" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Draft also goes to the rewrite step -->
+  <path d="M 495 75 V 35 H 1040 V 58" fill="none" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="740" y="26" font-size="14" text-anchor="middle" fill="#6b7280">Essay draft is also sent to the rewrite step</text>
+
+  <!-- LLM 3: rewrite -->
+  <rect x="980" y="60" width="120" height="100" rx="12" fill="#e5e7eb" stroke="#111" stroke-width="2"/>
+  <text x="1040" y="118" font-size="26" text-anchor="middle" fill="#111">LLM</text>
+  <text x="1040" y="192" font-size="17" text-anchor="middle" fill="#111">Rewrite with feedback</text>
+
+  <line x1="1100" y1="110" x2="1138" y2="110" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Revised essay -->
+  <rect x="1140" y="60" width="240" height="100" rx="12" fill="#ecfdf5" stroke="#22c55e" stroke-width="2"/>
+  <text x="1260" y="115" font-size="20" text-anchor="middle" fill="#111">Revised essay</text>
+
+  <line x1="1260" y1="160" x2="1260" y2="212" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Length check -->
+  <rect x="1120" y="215" width="280" height="70" rx="12" fill="#fff7ed" stroke="#f59e0b" stroke-width="2"/>
+  <text x="1260" y="244" font-size="20" text-anchor="middle" fill="#111">Over 500 words?</text>
+
+  <!-- No: final essay -->
+  <line x1="1400" y1="250" x2="1436" y2="250" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="1418" y="242" font-size="13" text-anchor="middle" fill="#111">No</text>
+  <rect x="1440" y="215" width="140" height="70" rx="12" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="1510" y="257" font-size="20" text-anchor="middle" fill="#111">Final essay</text>
+
+  <!-- Yes: back to the LLM to shorten -->
+  <line x1="1120" y1="250" x2="1082" y2="250" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="1101" y="242" font-size="13" text-anchor="middle" fill="#111">Yes</text>
+  <rect x="960" y="215" width="120" height="70" rx="12" fill="#e5e7eb" stroke="#111" stroke-width="2"/>
+  <text x="1020" y="243" font-size="22" text-anchor="middle" fill="#111">LLM</text>
+  <text x="1020" y="265" font-size="15" text-anchor="middle" fill="#111">shorten</text>
+
+  <!-- Loop: shortened essay is checked again -->
+  <path d="M 1020 285 V 335 H 1260 V 287" fill="none" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="1140" y="356" font-size="14" text-anchor="middle" fill="#6b7280">Still over 500 words: shorten again</text>
+</svg>
