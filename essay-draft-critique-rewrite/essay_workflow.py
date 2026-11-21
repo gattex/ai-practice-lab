@@ -12,13 +12,25 @@ Requirements:
     export GEMINI_API_KEY="your-key"
 """
 
+import random
 import sys
 
 from google import genai
 from google.genai import types
 
 MODEL = "gemini-3.5-flash-lite"
-DEFAULT_TOPIC = "Should cities invest in public transport?"
+TOPICS = [
+    "Should cities invest in public transport?",
+    "Should social media be regulated for teenagers?",
+    "Is remote work good for productivity?",
+    "Should college education be free?",
+    "Do electric cars really help the environment?",
+    "Should homework be banned in primary school?",
+    "Is artificial intelligence a threat to jobs?",
+    "Should governments tax sugary drinks?",
+    "Is space exploration worth its cost?",
+    "Should cities limit car traffic in the center?",
+]
 
 client = genai.Client()  # takes the key from GEMINI_API_KEY
 
@@ -141,7 +153,7 @@ def ensure_length(essay: str, max_retries: int = 3) -> str:
 
 
 def main():
-    topic = " ".join(sys.argv[1:]) or DEFAULT_TOPIC
+    topic = " ".join(sys.argv[1:]) or random.choice(TOPICS)
     print(f"Topic: {topic}")
 
     first_draft = draft(topic)
