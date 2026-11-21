@@ -18,10 +18,10 @@ python3 -m venv venv
 source venv/bin/activate
 pip install google-genai pydantic
 export GEMINI_API_KEY="..."
-python email_classifier.py   # run from the repo root
+python email_classifier.py   # run from the email-classifier/ folder
 ```
 
-The script uses a relative path (`Path("emails")`), so it must run from the repo root.
+The script uses a relative path (`Path("emails")`), so it must run from the `email-classifier/` folder.
 
 ## Conventions
 
