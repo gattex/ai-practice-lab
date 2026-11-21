@@ -25,16 +25,8 @@ The script uses a relative path (`Path("emails")`), so it must run from the `ema
 
 ## Conventions
 
-- The API key comes from the `GEMINI_API_KEY` environment variable. Never hardcode keys or commit `.env` files.
 - The model name lives in the `MODEL` constant. Keep it in one place.
 - Classification output is validated with the Pydantic `Classification` model through `response_schema`. Keep the categories in sync between the `Literal` type and the `RULES` prompt.
 - Keep `temperature=0` for classification so results are consistent.
 - Retry only on `errors.ServerError` (5xx). Do not retry `errors.ClientError` (4xx).
-- All code, comments, docs, prompt rules, and sample emails are in English. Keep the prompt rules as they are unless asked to change them.
-
-## Working in this repo
-
-- It's a learning repo: prefer small, readable changes over abstractions.
-- There is no test suite or `requirements.txt` yet. If you add one, say so in the summary.
-- Don't commit or push unless asked.
-- `venv/` and `__pycache__/` are ignored by git. Don't add them.
+- Keep the prompt rules as they are unless asked to change them.
