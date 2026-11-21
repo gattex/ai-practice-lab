@@ -50,10 +50,9 @@ The essay should include:
 
 Do not invent sources or citations.
 Write in English.
-Do not use more than 500 words
+Do not use more than 700 words
 """
     return ask(prompt, temperature=0)
-
 
 def critique(essay: str) -> str:
     """Step 2: review the draft. Temperature 0 keeps the review consistent."""
@@ -101,10 +100,44 @@ The new essay should include:
 
 Do not invent sources or citations.
 Write in English.
-Do not use more than 500 words
+Do not use more than 700 words
 Return only the revised essay, without comments or explanations.
 """
     return ask(prompt, temperature=0)
+
+
+def shorten_essay(essay: str, words: int, model: str = "openai:gpt-4o") -> str:
+    prompt = f"""The following essay has {words} words.
+The maximum allowed is 500 words.
+
+Shorten it to 500 words or fewer, keeping the thesis, structure and main arguments.
+Return only the shortened essay, without comments.
+
+---
+{essay}
+---"""
+    resp = client.models.generate_content(
+        model=MODEL,
+        contents=prompt,
+        config=types.GenerateContentConfig(temperature=0),
+    )
+    return resp.text.strip();
+
+
+def ensure_length(essay: str, max_retries: int = 3) -> str:
+    for attempt in range(max_retries):
+        words = len(essay.split())
+        print(f"Attempt {attempt + 1}: {words} words")
+
+        if words <= 500:
+            print("✅ Length OK")
+            return essay
+
+        essay = shorten_essay(essay, words)
+
+    print(f"⚠️ Not fixed after {max_retries} attempts ({len(essay.split())} words)")
+    return essay
+
 
 
 def main():
@@ -118,7 +151,10 @@ def main():
     print("\n=== 2. CRITIQUE ===\n" + review)
 
     final = rewrite(first_draft, review)
+    final = ensure_length(final);
     print("\n=== 3. REWRITE ===\n" + final)
+    
+    
 
 
 if __name__ == "__main__":
