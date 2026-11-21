@@ -22,7 +22,7 @@ Categories: `Logistics`, `Finance`, `Sales`, `Exchanges and returns`, `Other`.
 
 ## Installation
 
-From the repo root:
+From the `email-classifier/` folder:
 
 ```bash
 python3 -m venv venv
@@ -41,7 +41,7 @@ export GEMINI_API_KEY="your-gemini-key"
 
 ## Running
 
-Run the script from the repo root, because it looks for the `emails/` folder using a relative path.
+Run the script from the `email-classifier/` folder, because it looks for the `emails/` folder using a relative path.
 
 ```bash
 python email_classifier.py
@@ -55,8 +55,9 @@ To add a case, create a new file in `emails/`, for example `emails/email_4.txt`,
 
 ```
 ai-practice-lab/
-├── email_classifier.py    # classification with structured output
-└── emails/                # sample emails
+└── email-classifier/
+    ├── email_classifier.py    # classification with structured output
+    └── emails/                # sample emails
 ```
 
 ## Notes
