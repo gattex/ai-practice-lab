@@ -9,7 +9,7 @@ AI Practice Lab is a personal repo for studying AI with real model APIs. The mai
 - `email_classifier.py`: the classifier. Reads `emails/*.txt`, calls Gemini, prints a category and summary.
 - `emails/`: sample email inputs (`.txt`). Plain text, UTF-8.
 - `README.md`: user-facing setup and run instructions.
-- Other top-level `.py` files (`app.py`, `modelos.py`, `prueba.py`, `rag.py`) are experiments not yet documented. Don't modify them unless asked.
+- `temperature_experiment.py`: a small experiment that compares answers at different temperatures. It is not part of the classifier. Don't modify it unless asked.
 
 ## Setup and run
 
@@ -30,7 +30,7 @@ The script uses a relative path (`Path("emails")`), so it must run from the `ema
 - Classification output is validated with the Pydantic `Classification` model through `response_schema`. Keep the categories in sync between the `Literal` type and the `RULES` prompt.
 - Keep `temperature=0` for classification so results are consistent.
 - Retry only on `errors.ServerError` (5xx). Do not retry `errors.ClientError` (4xx).
-- Comments and the README are in English. Email content and categories come from the Spanish-speaking domain examples; keep the prompt rules as they are unless asked to change them.
+- All code, comments, docs, prompt rules, and sample emails are in English. Keep the prompt rules as they are unless asked to change them.
 
 ## Working in this repo
 
