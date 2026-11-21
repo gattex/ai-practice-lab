@@ -28,7 +28,7 @@ From the `email-classifier/` folder:
 python3 -m venv venv
 source venv/bin/activate
 
-pip install google-genai pydantic
+pip install -r requirements.txt
 ```
 
 ## API key setup
@@ -57,6 +57,7 @@ To add a case, create a new file in `emails/`, for example `emails/email_4.txt`,
 ai-practice-lab/
 └── email-classifier/
     ├── email_classifier.py    # classification with structured output
+    ├── requirements.txt       # dependencies
     └── emails/                # sample emails
 ```
 
