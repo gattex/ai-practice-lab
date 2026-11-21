@@ -42,6 +42,10 @@ python essay_workflow.py "Should cities invest in public transport?"
 
 Without arguments, the script uses a default topic. The output shows the three steps in order: draft, critique, and rewrite.
 
+## How it works
+
+![How the essay workflow works: topic, LLM draft, LLM critique, LLM rewrite, revised essay](workflow.svg)
+
 ## Structure
 
 ```
