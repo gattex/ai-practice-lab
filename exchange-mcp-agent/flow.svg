@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 340" width="1400" height="340" font-family="-apple-system, Helvetica, Arial, sans-serif">
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#111"/>
+    </marker>
+  </defs>
+
+  <rect width="1400" height="340" fill="#ffffff"/>
+
+  <!-- User prompt -->
+  <rect x="20" y="60" width="160" height="100" rx="12" fill="#f8d7da" stroke="#c0565b" stroke-width="2"/>
+  <text x="100" y="100" font-size="19" text-anchor="middle" fill="#111">User prompt</text>
+  <text x="100" y="128" font-size="14" text-anchor="middle" fill="#111">Convert 100 USD</text>
+  <text x="100" y="148" font-size="14" text-anchor="middle" fill="#111">to EUR</text>
+
+  <line x1="180" y1="110" x2="218" y2="110" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- LLM: chooses the tool -->
+  <rect x="220" y="60" width="160" height="100" rx="12" fill="#e5e7eb" stroke="#111" stroke-width="2"/>
+  <text x="300" y="118" font-size="26" text-anchor="middle" fill="#111">LLM</text>
+  <text x="300" y="192" font-size="15" text-anchor="middle" fill="#111">Chooses the tool</text>
+
+  <line x1="380" y1="110" x2="418" y2="110" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Tool call -->
+  <rect x="420" y="75" width="160" height="70" fill="#ffffff" stroke="#111" stroke-width="2"/>
+  <text x="500" y="116" font-size="19" text-anchor="middle" fill="#111">Tool call</text>
+  <rect x="420" y="210" width="160" height="44" fill="#e5e7eb"/>
+  <text x="500" y="238" font-family="Menlo, Consolas, monospace" font-size="14" text-anchor="middle" fill="#111">convert_currency</text>
+
+  <line x1="580" y1="110" x2="618" y2="110" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- MCP server -->
+  <rect x="620" y="60" width="160" height="100" rx="12" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="700" y="104" font-size="19" text-anchor="middle" fill="#111">MCP server</text>
+  <text x="700" y="130" font-size="14" text-anchor="middle" fill="#111">currency-mcp</text>
+  <text x="700" y="192" font-size="15" text-anchor="middle" fill="#111">Runs the tool</text>
+
+  <line x1="780" y1="110" x2="818" y2="110" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Tool result -->
+  <rect x="820" y="75" width="160" height="70" fill="#ffffff" stroke="#111" stroke-width="2"/>
+  <text x="900" y="116" font-size="19" text-anchor="middle" fill="#111">Tool result</text>
+  <rect x="820" y="210" width="160" height="44" fill="#e5e7eb"/>
+  <text x="900" y="238" font-family="Menlo, Consolas, monospace" font-size="14" text-anchor="middle" fill="#111">converted amount</text>
+
+  <line x1="980" y1="110" x2="1018" y2="110" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- LLM: writes the answer -->
+  <rect x="1020" y="60" width="160" height="100" rx="12" fill="#e5e7eb" stroke="#111" stroke-width="2"/>
+  <text x="1100" y="118" font-size="26" text-anchor="middle" fill="#111">LLM</text>
+  <text x="1100" y="192" font-size="15" text-anchor="middle" fill="#111">Writes the answer</text>
+
+  <line x1="1180" y1="110" x2="1218" y2="110" stroke="#111" stroke-width="2" marker-end="url(#arrow)"/>
+
+  <!-- Final answer -->
+  <rect x="1220" y="60" width="160" height="100" rx="12" fill="#ecfdf5" stroke="#22c55e" stroke-width="2"/>
+  <text x="1300" y="104" font-size="19" text-anchor="middle" fill="#111">Final answer</text>
+  <text x="1300" y="130" font-size="14" text-anchor="middle" fill="#111">e.g. 92.34 EUR</text>
+
+  <text x="700" y="320" font-size="14" text-anchor="middle" fill="#6b7280">Tools on the server: convert_currency, get_latest_rates, get_currencies, get_historical_rates</text>
+</svg>
